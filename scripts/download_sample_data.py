@@ -1,19 +1,25 @@
 from pathlib import Path
+import urllib.request
 
-SAMPLE = """\
-This is a tiny sample dataset.
-Replace this with real text for meaningful training.
-The quick brown fox jumps over the lazy dog.
-"""
+DATA_URL = "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
 
-def main() -> None:
-    Path("data").mkdir(parents=True, exist_ok=True)
-    p = Path("data/train.txt")
-    if not p.exists():
-        p.write_text(SAMPLE, encoding="utf-8")
-        print(f"Wrote {p}")
-    else:
-        print(f"{p} already exists")
+def main():
+    data_dir = Path("data")
+    data_dir.mkdir(exist_ok=True)
+
+    out_file = data_dir / "train.txt"
+
+    if out_file.exists():
+        print("Dataset already exists:", out_file)
+        return
+
+    print("Downloading Tiny Shakespeare dataset...")
+
+    urllib.request.urlretrieve(DATA_URL, out_file)
+
+    size = out_file.stat().st_size
+    print(f"Saved dataset to {out_file}")
+    print(f"Dataset size: {size/1024/1024:.2f} MB")
 
 if __name__ == "__main__":
     main()
