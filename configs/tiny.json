@@ -4,7 +4,7 @@
   "dtype": "auto",
   "data_path": "data/train.txt",
 
-  "context_length": 32,
+  "context_length": 256,
   "batch_size": 32,
   "num_workers": 0,
 
