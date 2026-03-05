@@ -3,6 +3,8 @@ import torch
 
 def pick_device(device: str) -> str:
     if device == "auto":
+        if torch.backends.mps.is_available():
+            return "mps"
         return "cuda" if torch.cuda.is_available() else "cpu"
     return device
 
