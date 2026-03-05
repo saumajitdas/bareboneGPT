@@ -8,7 +8,7 @@ from .model import GPT
 from .tokenizer import ByteTokenizer
 from .utils import pick_device
 
-app = FastAPI(title="bareboneLLM")
+app = FastAPI(title="bareboneGPT")
 
 TOK = ByteTokenizer()
 DEVICE = pick_device("auto")

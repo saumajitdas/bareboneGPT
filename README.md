@@ -1,4 +1,4 @@
-# bareboneLLM
+# bareboneGPT
 
 A minimal GPT-style (decoder-only) language model you can train from scratch.
 
@@ -10,9 +10,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 python scripts/download_sample_data.py
-PYTHONPATH=src python -m barebonellm.train --config configs/tiny.json
-PYTHONPATH=src python -m barebonellm.generate --checkpoint checkpoints/model.pt --prompt "Hello"
-PYTHONPATH=src python -m barebonellm.server --checkpoint checkpoints/model.pt
+PYTHONPATH=src python -m barebonegpt.train --config configs/tiny.json
+PYTHONPATH=src python -m barebonegpt.generate --checkpoint checkpoints/model.pt --prompt "Hello"
+PYTHONPATH=src python -m barebonegpt.server --checkpoint checkpoints/model.pt
 ```
 
 ## API

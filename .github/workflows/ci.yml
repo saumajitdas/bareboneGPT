@@ -24,12 +24,12 @@ jobs:
 
       - name: Compile check
         run: |
-          python -m py_compile src/barebonellm/*.py
+          python -m py_compile src/barebonegpt/*.py
 
       - name: Short train (CI)
         run: |
-          PYTHONPATH=src python -m barebonellm.train --config configs/ci.json
+          PYTHONPATH=src python -m barebonegpt.train --config configs/ci.json
 
       - name: Generate (smoke)
         run: |
-          PYTHONPATH=src python -m barebonellm.generate --checkpoint checkpoints/model.pt --prompt "Hello" --max_new_tokens 40
+          PYTHONPATH=src python -m barebonegpt.generate --checkpoint checkpoints/model.pt --prompt "Hello" --max_new_tokens 40

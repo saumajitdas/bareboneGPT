@@ -4,4 +4,4 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 ENV PYTHONPATH=/app/src
-CMD ["python", "-m", "barebonellm.server", "--checkpoint", "checkpoints/model.pt", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "barebonegpt.server", "--checkpoint", "checkpoints/model.pt", "--host", "0.0.0.0", "--port", "8000"]

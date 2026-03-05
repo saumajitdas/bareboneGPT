@@ -1,7 +1,7 @@
 [project]
-name = "barebonellm"
+name = "barebonegpt"
 version = "0.1.0"
-description = "Barebone GPT-style LLM from scratch (train + generate + serve)."
+description = "Barebone GPT-style transformer from scratch (train + generate + serve)."
 requires-python = ">=3.10"
 
 [tool.setuptools]

@@ -18,7 +18,7 @@ def download_with_progress(url: str, out_file: Path, chunk_size: int = 8 * 1024 
     """
     tmp = out_file.with_suffix(out_file.suffix + ".part")
 
-    req = urllib.request.Request(url, headers={"User-Agent": "bareboneLLM/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "bareboneGPT/1.0"})
     try:
         with urllib.request.urlopen(req) as resp:
             total = resp.headers.get("Content-Length")
