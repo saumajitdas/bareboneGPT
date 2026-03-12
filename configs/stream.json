@@ -3,23 +3,36 @@
   "device": "auto",
   "dtype": "auto",
 
+  "tokenizer": {
+    "type": "sentencepiece",
+    "model_path": "tokenizer/barebonegpt.model"
+  },
+
   "data_path": "data/train.txt",
+  "val_data_path": "data/val.txt",
 
   "streaming": true,
   "chunk_bytes": 4194304,
   "stride": 16,
   "loop": true,
 
+  "val_streaming": true,
+  "val_chunk_bytes": 4194304,
+  "val_stride": 16,
+  "val_loop": false,
+
+  "eval_every": 500,
+  "eval_steps": 50,
+
   "context_length": 128,
   "batch_size": 8,
   "num_workers": 2,
 
   "model": {
-    "vocab_size": 256,
-    "n_layers": 4,
-    "n_heads": 4,
-    "d_model": 256,
-    "d_ff": 1024,
+    "n_layers": 6,
+    "n_heads": 6,
+    "d_model": 384,
+    "d_ff": 1536,
     "dropout": 0.1
   },
 
